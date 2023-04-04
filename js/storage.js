@@ -1,19 +1,17 @@
-function save (key, value) {
+export const save = (key, value) => {
     try {
-        const data = JSON.stringify(value);
-        localStorage.setItem(key, data);
+      const data = JSON.stringify(value);
+      localStorage.setItem(key, data);
     } catch (err) {
-        console.error('error save', err.message);
+      console.error("Stringify error", err.message);
     }
-}
-
-function parseLocalStorage(key) {
+  };
+  
+  export const load = (key) => {
     try {
-        const data = localStorage.getItem(key);
-        return data === null ? undefined : JSON.parse(data);
+      const data = localStorage.getItem(key);
+      return data === null ? undefined : JSON.parse(data);
     } catch (err) {
-        console.error('error parse', err.message);
+      console.error("Parse error", err.message);
     }
-}
-
-export { save, parseLocalStorage };
+  };

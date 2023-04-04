@@ -1,12 +1,10 @@
-import { createTasks, CrossOutAndDeleteTheTask, createMarkupToLocalStorage } from './function.js'
+import { addNewTask, handleTaskBehaviour, fillTasksList } from "./functions.js";
 
-const refs = {
-    btnEl : document.getElementById('addBtn'),
-    ulEl : document.getElementById('myUL'),
-}
+const addBtn = document.getElementById("addBtn");
+const myUL = document.getElementById("myUL");
 
-refs.btnEl.addEventListener('click', createTasks);
-refs.ulEl.addEventListener('click', CrossOutAndDeleteTheTask);
-window.addEventListener('DOMContentLoaded', createMarkupToLocalStorage);
+addBtn.addEventListener("click", addNewTask);
+myUL.addEventListener("click", handleTaskBehaviour);
+window.addEventListener("DOMContentLoaded", fillTasksList);
 
 
